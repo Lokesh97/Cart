@@ -4,7 +4,7 @@
 public interface cartRemoteService {
 
     /* This adds items selected by users to cart */
-    public void addToCart(Product product);
+    public void addToCart(Product product) throws notEnoughItemAvailableException;
 
     /* This facilitates checkout options*/
     public void checkOutCart();
@@ -34,7 +34,7 @@ public interface cartRemoteService {
     public boolean areItemsExpiredInCart();
 
     /* This updates items in cart*/
-    public boolean notEnoughItemAvailableForCart();
+    public boolean notEnoughItemAvailableForCart(int productId);
 
     /* This updates cart so as to handle price discrepancy,item not found,number of items,item expired*/
     public void updateCart();
@@ -48,5 +48,5 @@ public interface cartRemoteService {
     /* This updates items in cart*/
     public boolean isPaymentSuccessful();
 
-    public boolean isPresentInCart(Product pid);
+    public boolean isPresentInCart(int pid);
 }

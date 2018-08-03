@@ -5,8 +5,24 @@ public class cartRemoteServiceImpl implements cartRemoteService {
 
     private static HashMap<Integer,cartProduct> cartProducts=new HashMap<>();
     @Override
-    public void addToCart(Product product) {
 
+    public boolean notEnoughItemAvailableForCart(int productId) {
+
+        return false;
+    }
+
+    public void addToCart(Product product) throws notEnoughItemAvailableException {
+        if(this.notEnoughItemAvailableForCart(product.getProductId())){
+              throw new notEnoughItemAvailableException("Not enough available items are there to add to cart");
+        }
+
+        if(isPresentInCart(product.getProductId())){
+            cartProduct CartProduct=cartProducts.get(product.getProductId());
+            CartProduct.setCartProductCount(CartProduct.getCartProductCount()+1);
+            cartProducts.put(product.getProductId(),CartProduct);
+        }else{
+                cartProducts.put(product.getProductId(),new cartProduct(product.getProductId(),1,product.getName(),product.getPrice()));
+            }
     }
 
 
@@ -16,7 +32,8 @@ public class cartRemoteServiceImpl implements cartRemoteService {
     }
 
     @Override
-    public boolean isPresentInCart(Product pid) {
+    public boolean isPresentInCart(int pid) {
+
         return (cartProducts.containsKey(pid)?true:false);
     }
 
@@ -61,9 +78,6 @@ public class cartRemoteServiceImpl implements cartRemoteService {
     }
 
     @Override
-    public boolean notEnoughItemAvailableForCart() {
-        return false;
-    }
 
     @Override
     public void updateCart() {
