@@ -10,14 +10,12 @@ public class Product {
 
     private int productCount;
 
-    private int fk_merchant;
-
     public Product(int productId, String name, String description, int productCount, int fk_merchant) {
         this.productId = productId;
         this.name = name;
         this.description = description;
         this.productCount = productCount;
-        this.fk_merchant = fk_merchant;
+
     }
 
     public int getProductId() {
@@ -52,11 +50,5 @@ public class Product {
         this.productCount = productCount;
     }
 
-    public int getFk_merchant() {
-        return fk_merchant;
-    }
 
-    public void setFk_merchant(int fk_merchant) {
-        this.fk_merchant = fk_merchant;
-    }
 }
