@@ -4,7 +4,7 @@
 public interface cartRemoteService {
 
     /* This adds items selected by users to cart */
-    public void addToCart();
+    public void addToCart(Product product);
 
     /* This facilitates checkout options*/
     public void checkOutCart();
@@ -47,4 +47,6 @@ public interface cartRemoteService {
 
     /* This updates items in cart*/
     public boolean isPaymentSuccessful();
+
+    public boolean isPresentInCart(Product pid);
 }
