@@ -1,4 +1,6 @@
+package com.paytm.shoppingCart;
 
+import com.paytm.shoppingCart.Product;
 
 import java.util.HashMap;
 

@@ -1,4 +1,9 @@
+package com.paytm.cartServices;
 
+import com.paytm.ExceptionHandling.cartEmptyException;
+import com.paytm.ExceptionHandling.notEnoughItemAvailableException;
+import com.paytm.ExceptionHandling.paymentUnsuccessfulException;
+import com.paytm.shoppingCart.Product;
 
 /* It is the interface for functions that shopping cart must deliver to its users*/
 public interface cartRemoteService {

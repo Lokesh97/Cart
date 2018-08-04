@@ -1,3 +1,12 @@
+package com.paytm.cartServices;
+
+import com.paytm.shoppingCart.Product;
+import com.paytm.shoppingCart.Products;
+import com.paytm.ExceptionHandling.cartEmptyException;
+import com.paytm.ExceptionHandling.notEnoughItemAvailableException;
+import com.paytm.ExceptionHandling.paymentUnsuccessfulException;
+import com.paytm.cartServices.cartRemoteService;
+import com.paytm.shoppingCart.cartProduct;
 
 import java.util.HashMap;
 
@@ -30,10 +39,10 @@ public class cartRemoteServiceImpl implements cartRemoteService {
     public void showAllCart() {
 
         for (HashMap.Entry<Integer,cartProduct> entry : cartProducts.entrySet()){
-            System.out.println("com.paytm.shoppingCart.Product id = " + entry.getKey());
-            System.out.println("com.paytm.shoppingCart.Product count= "+entry.getValue().getCartProductCount());
-            System.out.println("com.paytm.shoppingCart.Product price= "+entry.getValue().getCartProductPrice());
-            System.out.println("com.paytm.shoppingCart.Product name= "+entry.getValue().getCartProductName());
+            System.out.println("com.paytm.shoppingCart.com.paytm.shoppingCart.Product id = " + entry.getKey());
+            System.out.println("com.paytm.shoppingCart.com.paytm.shoppingCart.Product count= "+entry.getValue().getCartProductCount());
+            System.out.println("com.paytm.shoppingCart.com.paytm.shoppingCart.Product price= "+entry.getValue().getCartProductPrice());
+            System.out.println("com.paytm.shoppingCart.com.paytm.shoppingCart.Product name= "+entry.getValue().getCartProductName());
         }
     }
 
