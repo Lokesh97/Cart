@@ -7,31 +7,19 @@ public interface cartRemoteService {
     public void addToCart(Product product) throws notEnoughItemAvailableException;
 
     /* This facilitates checkout options*/
-    public void checkOutCart();
+    public void checkOutCart() throws cartEmptyException;
 
     /* This updates items in cart*/
-    public void updateItemsToCart();
-
-    /* This updates items in cart*/
-    public void adjustItemsInCart();
-
-    /* This updates prices of items in cart*/
-    public void updateItemPriceToCart();
+    public void updateItemInCart(int productId);
 
     /* This removes items in cart*/
-    public void removeItemsFromCart();
+    public void removeItemsFromCart() throws cartEmptyException;
 
     /* This shows list of items present in cart*/
     public void showAllCart();
 
     /* This checks whether something is present in cart*/
     public boolean isEmptyCart();
-
-    /* This direct users to do shopping on mall*/
-    public void goShopping();
-
-    /* This updates items in cart*/
-    public boolean areItemsExpiredInCart();
 
     /* This updates items in cart*/
     public boolean notEnoughItemAvailableForCart(int productId);
@@ -40,13 +28,14 @@ public interface cartRemoteService {
     public void updateCart();
 
     /* This updates items in cart*/
-    public void updateInventory();
-
-    /* This updates items in cart*/
-    public void proceedToPay();
+    public void proceedToPay() throws paymentUnsuccessfulException;
 
     /* This updates items in cart*/
     public boolean isPaymentSuccessful();
 
     public boolean isPresentInCart(int pid);
+
+    public void removeItemFromCart(int pid);
+
+    public void generateCartBill();
 }

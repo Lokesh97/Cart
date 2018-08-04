@@ -1,3 +1,5 @@
+
+
 public class cartProduct {
 
     private int cartProductId;
@@ -13,10 +15,11 @@ public class cartProduct {
     }
 
     public double getCartProductPrice() {
+
         return cartProductPrice;
     }
 
-    public void setCartProductPrice(int cartProductPrice) {
+    public void setCartProductPrice(double cartProductPrice) {
 
         this.cartProductPrice = cartProductPrice;
     }
